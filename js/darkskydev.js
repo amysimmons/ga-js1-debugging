@@ -10,7 +10,7 @@ var DarkSkyDev = DarkSkyDev || {}
       $h2 = $payments.children("h2"),
       $table = $payments.children("table"),
       $tbody = $table.children("tbody"),
-      graph_selector = '#graaph'
+      graph_selector = '#graph'
 
   var prepare_the_graph = function() {
     clearTimeout(window_resize_timeout)
@@ -71,9 +71,11 @@ var DarkSkyDev = DarkSkyDev || {}
   }
 
   var update_usage_display = function() {
+    // debugger
     if( !$(graph_selector)[0] ) return
 
     $.getJSON('https://random.now.sh', function (apiData) {
+      // debugger
       display_history({
         "2016-6-24": Math.floor(apiData.random * 8),
         "2016-6-25":Math.floor(5 + apiData.random * 3),
@@ -91,6 +93,7 @@ var DarkSkyDev = DarkSkyDev || {}
   };
 
   var display_history = function(h) {
+    // debugger
     var days = []
     var calls_this_month = 0
 
