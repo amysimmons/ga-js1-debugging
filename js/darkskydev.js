@@ -40,8 +40,10 @@ var DarkSkyDev = DarkSkyDev || {}
       update_usage_display()
     })
     setInterval(function() {
+      var x = new Date()
+      console.log(x)
       update_usage_display()
-    }, 1000)
+    }, 10000)
     update_usage_display()
   }
 
