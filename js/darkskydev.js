@@ -233,14 +233,14 @@ var DarkSkyDev = DarkSkyDev || {}
 
   var display_api_key = function(new_key) {
     var old_key = $('#api_key').val()
-    if( old_key == new_key.value ) {
+    if( old_key == new_key.key ) {
       reset_api_key()
       return
     }
-    $('#api_key').val(new_key.value).select()
+    $('#api_key').val(new_key.key).select()
     var test_link = $('#intro_alert .api_test_link')
-    test_link.prop('href', test_link.prop('href').replace(old_key, new_key.value))
-    test_link.text(test_link.text().replace(old_key, new_key.value))
+    test_link.prop('href', test_link.prop('href').replace(old_key, new_key.key))
+    test_link.text(test_link.text().replace(old_key, new_key.key))
   }
 
   $(document).ready(setup)
